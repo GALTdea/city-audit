@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_225949) do
+ActiveRecord::Schema.define(version: 2020_06_08_033714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 2020_05_27_225949) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.string "title"
+    t.integer "likes"
+    t.text "resume"
+    t.string "link"
+    t.string "city"
+    t.string "county"
+    t.string "state"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -44,6 +59,20 @@ ActiveRecord::Schema.define(version: 2020_05_27_225949) do
     t.string "notifiable_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "publications", force: :cascade do |t|
+    t.string "title"
+    t.integer "likes"
+    t.text "resume"
+    t.string "link"
+    t.string "journalist"
+    t.string "publisher"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_publications_on_user_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -76,5 +105,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_225949) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entries", "users"
+  add_foreign_key "publications", "users"
   add_foreign_key "services", "users"
 end

@@ -1,0 +1,69 @@
+<%= form_with(model: publication, local: true) do |form| %>
+  <% if publication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+      <% publication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :likes %>
+    <%= form.number_field :likes, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :resume %>
+    <%= form.text_area :resume, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :link %>
+    <%= form.text_field :link, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :journalist %>
+    <%= form.text_field :journalist, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :publisher %>
+    <%= form.text_field :publisher, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if publication.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', publication, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if publication.persisted? %>
+      <%= link_to "Cancel", publication, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", publications_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

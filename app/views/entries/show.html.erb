@@ -1,0 +1,39 @@
+<div class="page-header">
+  <%= link_to entries_path, class: 'btn btn-default' do %>
+    All Entries
+  <% end %>
+  <%= link_to edit_entry_path(@entry), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show entry</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @entry.title %></dd>
+
+  <dt>Likes:</dt>
+  <dd><%= @entry.likes %></dd>
+
+  <dt>Resume:</dt>
+  <dd><%= @entry.resume %></dd>
+
+  <dt>Link:</dt>
+  <dd><%= @entry.link %></dd>
+
+  <dt>City:</dt>
+  <dd><%= @entry.city %></dd>
+
+  <dt>County:</dt>
+  <dd><%= @entry.county %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @entry.state %></dd>
+
+  <dt>Rating:</dt>
+  <dd><%= @entry.rating %></dd>
+
+  <dt>User:</dt>
+  <dd><%= @entry.user %></dd>
+
+</dl>

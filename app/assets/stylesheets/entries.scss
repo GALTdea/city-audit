@@ -1,0 +1,19 @@
+// Place all the styles related to the Entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+@import "jumpstart/sticky-footer";
+@import "jumpstart/announcements";
+
+
+
+.entry-card {
+    background-color: gray;
+}
+
+body{
+    background-color: blue;
+}
