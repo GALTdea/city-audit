@@ -1,0 +1,75 @@
+<% @publications.each do |publication| %>
+    <div class="row mb-2 ">
+        <div class="col-md-12">
+            <div class="card bg-warning">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="news-title">
+                            <h5><%= publication.title %></h5>
+                            </div>
+                            <div class="news-cats">
+                                <ul class="list-unstyled list-inline mb-1">
+                                    <li class="list-inline-item">
+                                            <i class="fa fa-folder-o text-danger"></i>
+                                            <a href="#"><small>Advertisment</small> </a>
+                                    </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-folder-o text-danger"></i>
+                                            <a href="#"><small>Author</small> </a>
+                                    </li>
+                                        <li class="list-inline-item">
+                                            <i class="fa fa-folder-o text-danger"></i>
+                                            <a href="#"><small>4th July 2018</small></a>
+                                    </li>   
+                                </ul>
+                            </div>
+                            <div class="news-content">
+                                <p> <%= publication.resume %> </p>
+                            </div>
+                            <div class="news-buttons">
+                                <%= link_to 'Read', root_path , class:'' %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+
+<%# create_table "entries", force: :cascade do |t|
+    t.string "title"
+    t.integer "likes"
+    t.text "resume"
+    t.string "link"
+    t.string "city"
+    t.string "county"
+    t.string "state"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end %>
+
+
+    <% @publications.each do |publication| %>
+        <%= content_tag :tr, id: dom_id(publication), class: dom_class(publication) do %>
+          
+
+                      <td><%= publication.title %></td>
+                      <td><%= publication.likes %></td>
+                      <td><%= publication.resume %></td>
+                      <td><%= publication.link %></td>
+                      <td><%= publication.journalist %></td>
+                      <td><%= publication.publisher %></td>
+                      <td><%= publication.rating %></td>
+                      <td><%= publication.user %></td>
+          
+          
+            <td><%= link_to 'Show', publication %></td>
+          
+        <% end %>
+      <% end %>

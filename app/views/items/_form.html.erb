@@ -1,0 +1,64 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :votes %>
+    <%= form.number_field :votes, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :resume %>
+    <%= form.text_area :resume, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :link %>
+    <%= form.text_field :link, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :region %>
+    <%= form.text_field :region, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if item.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', item, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if item.persisted? %>
+      <%= link_to "Cancel", item, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", items_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

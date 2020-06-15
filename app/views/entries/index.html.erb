@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
 		<div class="col-md-9">
+          <%= current_user.id %>
 		  <p>Find the updates on Latest News in this area</p>
 		</div>
 	</div>
@@ -9,8 +10,8 @@
         <div class="row mb-2">
           <div class="col-md-12">
               <div class="card entry-card">
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Select a City</label>
+                <div class="form-group pl-3 pr-3">
+                  <label for="exampleFormControlSelect1" class="mr5">Select a City</label>
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Los Angeles</option>
                     <option>New York</option>
