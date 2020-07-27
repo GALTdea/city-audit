@@ -1,73 +1,84 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-9">
-        <p>Find the updates on Latest News in this area</p>
-    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <p>Find the updates on Latest News in this area</p>
+        </div>
 
-    <div class="col-md-9">
-        <% @items.each do |item| %>
-                <div class="row mb-2 ">
-                <div class="col-md-12">
-                    <div class="card entry-card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="news-title">
-                                        <h3> <%= item.title %></h3>
-                                    </div>
-                                    <div class="news-cats">
-                                        <ul class="list-unstyled list-inline mb-1">
-                                            <li class="list-inline-item">
-                                                    <i class="fa fa-folder-o text-danger"></i>
-                                                    <a href="#"><small>Advertisment</small> </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                    <i class="fa fa-folder-o text-danger"></i>
-                                                    <a href="#"><small>Author</small> </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                    <i class="fa fa-folder-o text-danger"></i>
-                                                    <a href="#"><small>4th July 2018</small></a>
-                                            </li>   
-                                        </ul>
-                                    </div>
-                                    <div class="news-content">
-                                        <p> <%= truncate(item.resume, :length => 150)  %> </p>
-                                    </div>
-                                    <div class="news-buttons">
-                                        <%= link_to 'Read More', item_path(item) , class:'btn btn-outline-secondary btn-sm   feed_link stretched-link' %>
+        <div class="col-md-9">
+            <% @items.each do |item| %>
+                    <div class="row mb-2 ">
+                        <div class="col-md-12">
+                            <div class="card entry-card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="news-title">
+                                                <h3> <%= item.title %></h3>
+                                            </div>
+                                            <div class="news-cats">
+                                                <ul class="list-unstyled list-inline mb-1">
+                                                    <li class="list-inline-item">
+                                                            <i class="fa fa-folder-o text-danger"></i>
+                                                            <a href="#"><small>Advertisment</small> </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                            <i class="fa fa-folder-o text-danger"></i>
+                                                            <a href="#"><small>Author</small> </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                            <i class="fa fa-folder-o text-danger"></i>
+                                                            <a href="#"><small>4th July 2018</small></a>
+                                                    </li>   
+                                                </ul>
+                                            </div>
+                                            <div class="news-content">
+                                                <p> <%= truncate(item.resume, :length => 150)  %> </p>
+                                            </div>
+                                            <div class="news-buttons">
+                                                <%= link_to 'Read More', item_path(item) , class:'btn btn-outline-secondary btn-sm   feed_link stretched-link' %>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+            <% end %>
+
+        </div>
+
+        <div class="col-md-3">
+            <div class="row mb-2">
+                <div class="col-md-12">
+                    <div class="card entry-card">
+                    <h5> <%= link_to 'Submit an Item', new_item_path , class:'' %>  </h5>
+                    <%# btn btn-outline-secondary btn-sm   feed_link stretched-link %>
+                    </div>
                 </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                    <div class="card-body">
+                        <img class="img1" class="" src="http://www.3forty.media/cannix/wp-content/uploads/2018/04/clem-onojeghuo-228522-unsplash-1-768x1153.jpg">
+                    </div>
+                    </div>
                 </div>
+            </div>
+            </div>
+        </div>
 
-
-        <% end %>
-
-    </div>
-
-
-
+</div>
 
 
 
 
 
- <%# t.string "title"
-    t.integer "votes"
-    t.text "resume"
-    t.string "link"
-    t.string "region"
-    t.integer "rating"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_items_on_user_id" %>
 
 
+ 
 
 
 

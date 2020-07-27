@@ -8,6 +8,45 @@
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
 
+
+.hide {
+    display: none;
+  }
+  
+  .lh-copy {
+    line-height: 1.5;
+  }
+
+
+a.morelink {
+    text-decoration: none;
+    outline: none;
+  }
+  .morecontent span {
+    display: none;
+  }
+
+
+
+// color
+.greenish {
+   color: #41cc90;
+}
+
+
+.point-reply-link a:link { 
+    text-decoration:none !important;
+    
+    color: black !important;
+}
+
+
+.point-reply-link a:link:hoverr { 
+    text-decoration:none !important;
+    background-color: red !important;
+    color: black !important;
+}
+
 // img{width:100%;}
 // body{
 //     background-color: blue;
@@ -20,6 +59,38 @@
     // background-color: gray;
     background: #f7f7f7;
 }
+
+
+
+article{
+    background-color: #E0E0E0;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+figure img{
+    width: 100%;
+    height: 100%;
+}
+.glyphicon-folder-open,
+.glyphicon-user,
+.glyphicon-calendar,
+.glyphicon-eye-open,
+.glyphicon-comment{
+    padding: 5px;
+}
+
+
+
+.point p {
+    margin-bottom: 0rem !important;
+}
+
+.point-reply p{
+    margin-bottom: 0rem !important;
+}
+
+
 
 // // Fixes bootstrap nav-brand container overlap
 // @include media-breakpoint-down(xs) {

@@ -1,33 +1,32 @@
-<div class="page-header">
-  <%= link_to items_path, class: 'btn btn-default' do %>
-    All Items
-  <% end %>
-  <%= link_to edit_item_path(@item), class: 'btn btn-primary' do %>
-    Edit
-  <% end %>
-  <h1>Show item</h1>
+<div class="container">
+  <div class="page-header">
+    <h3> <%= @item.title %> </h3>
+  </div>
+
+  <div><%= @item.resume %></div>
+  
+<section class="float-right mr-5">
+  <ul class="list-inline ">
+    <li class="list-inline-item"> 
+      California
+    </li>
+    <li class="list-inline-item">
+      3/12/2020
+    </li>
+    <li class="list-inline-item"> 
+      <a href="#" class="btn btn-default btn-sm pull-right pr-2">More ... </a>
+    </li>
+    <%# <li class="list-group-item">   </li> %>
+  </ul>
+
+</section>
+
+ <div class="1link mt-5">
+    <%= link_to items_path, class: 'btn btn-default' do %>
+        All Items
+      <% end %>
+      <%= link_to edit_item_path(@item), class: 'btn btn-primary' do %>
+        Edit
+    <% end %>
+ </div>
 </div>
-
-<dl class="dl-horizontal">
-  <dt>Title:</dt>
-  <dd><%= @item.title %></dd>
-
-  <dt>Votes:</dt>
-  <dd><%= @item.votes %></dd>
-
-  <dt>Resume:</dt>
-  <dd><%= @item.resume %></dd>
-
-  <dt>Link:</dt>
-  <dd><%= @item.link %></dd>
-
-  <dt>Region:</dt>
-  <dd><%= @item.region %></dd>
-
-  <dt>Rating:</dt>
-  <dd><%= @item.rating %></dd>
-
-  <dt>User:</dt>
-  <dd><%= @item.user %></dd>
-
-</dl>

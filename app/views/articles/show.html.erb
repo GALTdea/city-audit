@@ -1,0 +1,39 @@
+<div class="page-header">
+  <%= link_to articles_path, class: 'btn btn-default' do %>
+    All Articles
+  <% end %>
+  <%= link_to edit_article_path(@article), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show article</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @article.title %></dd>
+
+  <dt>Likes:</dt>
+  <dd><%= @article.likes %></dd>
+
+  <dt>Resume:</dt>
+  <dd><%= @article.resume %></dd>
+
+  <dt>Link:</dt>
+  <dd><%= @article.link %></dd>
+
+  <dt>City:</dt>
+  <dd><%= @article.city %></dd>
+
+  <dt>County:</dt>
+  <dd><%= @article.county %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @article.state %></dd>
+
+  <dt>Rating:</dt>
+  <dd><%= @article.rating %></dd>
+
+  <dt>User:</dt>
+  <dd><%= @article.user %></dd>
+
+</dl>

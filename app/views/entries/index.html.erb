@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
 		<div class="col-md-9">
-          <%= current_user.id %>
 		  <p>Find the updates on Latest News in this area</p>
 		</div>
-	</div>
-	<div class="row ">
+   </div>
+
+   <div class="row ">
 		<div class="col-md-9">
         <div class="row mb-2">
           <div class="col-md-12">
@@ -22,7 +22,7 @@
                 </div>  
               </div>
           </div>
-      </div>
+        </div>
 
       <% if @entries.any? %>
         <%= render 'entry' %>
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-
+     
       <div class="row mb-2 ">
         <div class="col-md-12">
             <div class="card entry-card">
@@ -446,7 +446,7 @@
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
                           <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">»</span>
+                            <span aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                           </a>
                         </li>
@@ -457,11 +457,13 @@
 		    
 		</div>
 
-		<div class="col-md-3">
+ 
+ 
+  <div class="col-md-3">
       <div class="row mb-2">
           <div class="col-md-12">
               <div class="card entry-card">
-              <h5> <%= link_to 'Submit an Entry', root_path , class:'' %>  </h5>
+              <h5> <%= link_to 'Submit an Entry', new_entry_path , class:'' %>  </h5>
                <%# btn btn-outline-secondary btn-sm   feed_link stretched-link %>
               </div>
           </div>

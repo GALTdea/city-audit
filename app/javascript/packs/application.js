@@ -14,7 +14,20 @@ window.Rails = Rails
 import 'bootstrap'
 import 'data-confirm-modal'
 
+// Stimulus controllers
+import 'controllers'
+
 $(document).on("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
+
+
+
+
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+const application = Application.start()
+const context = require.context(".", true, /\.js$/)
+application.load(definitionsFromContext(context))

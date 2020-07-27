@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row">
+		<div class="col-md-9">
+		  <h2>Top Ten BS Article Healines of the Day</h2> 
+		</div>
+	</div>
+	<div class="row ">
+		<div class="col-md-12">
+    <%# search  %>
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="card entry-card">
+            <div class="form-group pl-3 pr-3">
+              <label for="exampleFormControlSelect1" class="mr5">Select a City</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Los Angeles</option>
+                <option>New York</option>
+                <option>San Diego</option>
+                <option>Seattle</option>
+                <option>Atlanta</option>
+              </select>
+            </div>  
+          </div>
+        </div>
+      </div>
+    <%# end search %>
+    
+        <% if @articles.any? %>
+          <% @articles.each do |article| %>
+            <div class="row mb-2 ">
+              <div class="col-md-12">
+                  <div class="card entry-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="news-title">
+                                  <h3> <%= article.title %></h3>
+                                </div>
+                                <div class="news-cats">
+                                    <ul class="list-unstyled list-inline mb-1">
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-folder-o text-danger"></i>
+                                                <a href="#"><small>Advertisment</small> </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-folder-o text-danger"></i>
+                                                <a href="#"><small>Author</small> </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                                <i class="fa fa-folder-o text-danger"></i>
+                                                <a href="#"><small>4th July 2018</small></a>
+                                        </li>   
+                                    </ul>
+                                </div>
+                                <div class='textControl'><%= article.resume %></div>
+                                <button class="hide"
+                                  data-target="read-more.moreButton"
+                                  data-action="read-more#showMore">
+                                  Ver más
+                                </button>
+
+                                <button class="hide"
+                                  data-target="read-more.lessButton"
+                                  data-action="read-more#showLess">
+                                  Ver menos
+                                </button>
+                                  <%# <div class="news-content"> %>
+                                      <p> <%#= truncate(article.resume, :length => 150)  %> </p>
+                                  <%# </div> %>
+                                <%# points %>
+                                <div class="row">
+                                  <div class="col-md-12 mb-1">
+                                    <div class="card">
+                                      <div class="card-body point p-0 m-1">
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim quae eligendi saepe fugit doloremque 
+                                        eum voluptatum magni blanditiis eveniet provident! Qui consequuntur repudiandae assumenda voluptate atque omnis officia quia libero!</p>
+                                      </div>
+                                    </div> 
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-10 mb-1">
+                                      <div class="card point-reply ">
+                                        <div class="card-body pl-1 p-0 point-reply-link">
+                                            <%= link_to 'point number un', root_path , class:'point-reply-link ', :style => 'color: black' %> 
+                                        </div>
+                                      </div> 
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="news-buttons mt-5">
+                                    <%#= link_to 'Read More', article_path(article) , class:'  feed_link stretched-link' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div>No articles at the moment</div>
+        <% end %>
+
+        
+    </div>
+  </div>
+
+</div>
+
+
+
